@@ -1,6 +1,9 @@
 # Use an official Node.js runtime as a parent image
 FROM node:18-alpine
 
+# Add this line to update CA certificates
+RUN apk add --no-cache ca-certificates && update-ca-certificates
+
 # Set the working directory in the container
 WORKDIR /usr/src/app
 
