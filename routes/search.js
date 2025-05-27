@@ -10,12 +10,13 @@ router.post('/search', async (req, res) => {
     try {
         // Initialize the OpenAI client INSIDE the handler
         const openai = new OpenAI({
-            apiKey: process.env.OPENAI_API_KEY,
+            baseURL: "https://api.aimlapi.com/v1",
+            apiKey: process.env.AIMLAPI_KEY, // Changed environment variable name
         });
 
         // Use OpenAI API to understand the query
         const completion = await openai.chat.completions.create({
-            model: "gpt-3.5-turbo", // Or a newer/more suitable model
+            model: "gpt-4o-mini", // Ensure this model is used
             messages: [
                 { role: "system", content: "You are an assistant that helps find outfits. Extract key characteristics from the user's query for searching a fashion inventory. Focus on type of clothing, color, style, occasion, season, and material. Return these characteristics as a comma-separated list." },
                 { role: "user", content: query }

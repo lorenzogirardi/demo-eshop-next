@@ -2,7 +2,7 @@
 FROM node:18-alpine
 
 # Add this line to update CA certificates
-RUN apk add --no-cache ca-certificates && update-ca-certificates
+RUN apk update && apk add --no-cache ca-certificates && update-ca-certificates
 
 # Set the working directory in the container
 WORKDIR /usr/src/app
