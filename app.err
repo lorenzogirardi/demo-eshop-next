@@ -1,0 +1,33 @@
+Error with OpenAI API or search logic: RateLimitError: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.
+    at APIError.generate (/app/node_modules/openai/error.js:63:20)
+    at OpenAI.makeStatusError (/app/node_modules/openai/core.js:302:33)
+    at OpenAI.makeRequest (/app/node_modules/openai/core.js:346:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /app/routes/search.js:17:28 {
+  status: 429,
+  headers: {
+    'alt-svc': 'h3=":443"; ma=86400',
+    'cf-cache-status': 'DYNAMIC',
+    'cf-ray': '94650a8ddd5ae207-ORD',
+    connection: 'keep-alive',
+    'content-length': '337',
+    'content-type': 'application/json; charset=utf-8',
+    date: 'Tue, 27 May 2025 11:06:08 GMT',
+    server: 'cloudflare',
+    'set-cookie': '__cf_bm=fhW68XYkVQHKUm2_s4QTu58ou5nt_.gVuh_vuly5t9I-1748343968-1.0.1.1-adfpv_4zSOmxmLlMD5k5lHLps8DkptbVtzVl.2C3RLm_j3lDv5S2AevZySx5KpKMZHy5KMJn_3UhOB9GMCzazlwPLzTOaJLon56HA.ydfjw; path=/; expires=Tue, 27-May-25 11:36:08 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None, _cfuvid=YioUvNU6PfiZDMKN7VgHRbb2fSx8dS87wkHJPCKqBAI-1748343968987-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None',
+    'strict-transport-security': 'max-age=31536000; includeSubDomains; preload',
+    vary: 'Origin',
+    'x-content-type-options': 'nosniff',
+    'x-request-id': 'req_613108379bb9bd4eea7a57622300d1a6'
+  },
+  request_id: 'req_613108379bb9bd4eea7a57622300d1a6',
+  error: {
+    message: 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.',
+    type: 'insufficient_quota',
+    param: null,
+    code: 'insufficient_quota'
+  },
+  code: 'insufficient_quota',
+  param: null,
+  type: 'insufficient_quota'
+}

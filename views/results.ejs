@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outfit Search Results</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <h1>Search Results</h1>
+
+    <% if (outfits && outfits.length > 0) { %>
+        <div class="results-container">
+            <% outfits.forEach(outfit => { %>
+                <div class="outfit">
+                    <h2><%= outfit.name %></h2>
+                    <p><%= outfit.description %></p>
+                    <% if (outfit.imageUrl) { %>
+                        <img src="<%= outfit.imageUrl %>" alt="<%= outfit.name %>">
+                    <% } %>
+                </div>
+            <% }); %>
+        </div>
+    <% } else { %>
+        <p>No outfits found matching your criteria.</p>
+    <% } %>
+
+    <a href="/">New Search</a>
+</body>
+</html>
